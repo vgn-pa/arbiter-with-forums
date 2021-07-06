@@ -16,3 +16,7 @@ Follow these simple instructions:
  * Open .env from `arbiter/.env` folder and configure, as desired
  
 Voila!
+
+# Usage
+
+Open in your browser and enjoy. CLI available via `php artisan` in `arbiter` folder.
