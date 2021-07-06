@@ -1,0 +1,877 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+#app {
+    main {
+        padding: 0 10px;
+    }
+    .app-content {
+        margin:1.5rem 0 calc(40px + 1.5rem) 0;
+    }
+}
+
+.page-title {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.filters {
+    padding: 6px;
+    font-size: 12px;
+    legend {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+}
+
+.last-5-meter {
+    .last-5-item {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border-right: 1px solid $primary-bg;
+        &.positive {
+            background: $green;
+        }
+        &.negative {
+            background: $red;
+        }
+        &.none {
+            background: $yellow;
+        }
+        &:last-of-type {
+            border: 0;
+        }
+    }
+}
+
+tr.is_alliance {
+    background: $darkerminty !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number], input[type=text], textarea {
+    padding: 0 5px;
+    border-radius: 3px;
+    width: 120px;
+    border: 0;
+}
+
+.race {
+    font-weight: bold;
+    &.Ter,&.Terran {
+        color: #aa7744;
+    }
+    &.Cat,&.Cathaar,&.Prty {
+        color: #6699cc;
+    }
+    &.Xan,&.Xandathrii,&.Good {
+        color: #00cc00;
+    }
+    &.Zik,&.Zikonian,&.Bad {
+        color: #cccc00;
+    }
+    &.Etd,&.Eitraides {
+        color: #cccccc;
+    }
+}
+
+.race-bg {
+    &.Ter,&.Terran {
+        color: #fff;
+        background-color: #aa7744;
+    }
+    &.Cat,&.Cathaar,&.Prty {
+        color: #fff;
+        background-color: #6699cc;
+    }
+    &.Xan,&.Xandathrii,&.Good {
+        color: #fff;
+        background-color: #00cc00;
+    }
+    &.Zik,&.Zikonian,&.Bad {
+        color: #fff;
+        background-color: #cccc00;
+    }
+    &.Etd,&.Eitraides {
+        color: #fff;
+        background-color: #cccccc;
+    }
+}
+
+.score-indicator {
+  background: #secondary-bg;
+  text-align: center;
+  margin: 20px auto;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  border: 5px solid $link-color;
+  padding-top: 35px;
+  line-height: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    .checkbox-label {
+        font-size: 12px;
+        font-weight: normal;
+    }
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.card {
+    &.has-table {
+        border: 0;
+        .card-header {
+            border-bottom: 0;
+        }
+        .card-body {
+            padding: 0;
+            // border: 1px solid $primary-bg;
+            table {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.btn-link {
+    background: $link-color;
+    color: #fff;
+    &:hover {
+        background: $link-color-hover;
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+small {
+    &.help {
+        color: #aaa;
+        line-height: 1.4;
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@include media-breakpoint-up(xs) {
+    .hide-small {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .hide-small {
+        display: table-cell;
+    }
+}
+
+.missionattack {
+    color: $red !important;
+}
+.missiondefend {
+    color: $green !important;
+}
+
+.planet-deleted {
+    color: $red;
+}
+
+.planet-new {
+    color: $green;
+}
+
+table {
+    font-size: 11px;
+    white-space: nowrap;
+    width: 100%;
+    table-layout: auto;
+    tr {
+        &.totals {
+            border-top: 2px solid $link-color;
+        }
+    }
+
+    &#galaxies {
+        .alliances {
+            .button {
+              padding: 3px 5px;
+              border-radius: 5px;
+              background-color: #ffc107;
+              color: #000;
+              margin-right: 3px;
+              &.red {
+                  background-color: $red;
+              }
+              &.green {
+                  background-color: $green;
+              }
+              &.blue {
+                  background-color: $lightblue;
+              }
+            }
+        }
+    }
+}
+.table {
+    td, th {
+        padding: 6px;
+        vertical-align: middle;
+    }
+}
+
+
+.attack {
+    font-size: 12px;
+    th {
+        padding: 5px;
+        &.anti {
+            padding: 2px;
+            font-size: 10px;
+            span {
+                display: block;
+            }
+        }
+    }
+    td {
+        padding: 5px;
+        &.anti {
+            background: red;
+            &.anti-yes {
+                background: green;
+            }
+        }
+    }
+    .book {
+        a {
+            color: #fff;
+            cursor: pointer;
+            &:hover {
+                background-color: $link-color-hover;
+            }
+        }
+    }
+    .yes {
+        color: $green;
+    }
+    .no {
+        color: $red;
+    }
+    .ships-td {
+        p {
+            margin-bottom: 0;
+        }
+        a {
+            display: block;
+            color: #ff0080;
+        }
+        .ships {
+            white-space: nowrap;
+            &.col1 > span:nth-of-type(2) {
+                padding-right: 10px;
+            }
+            span {
+                display: inline-block;
+                width: 25%;
+            }
+            .name {
+                text-align: left;
+                padding-right: 4px;
+                min-width: fit-content;
+            }
+            .amount {
+                text-align: right;
+                min-width: fit-content;
+            }
+        }
+    }
+
+    .fa-check {
+        color: $green;
+        font-size: 10px;
+    }
+    .fa-times {
+        color: $red;
+        font-size: 10px;
+    }
+}
+
+.scans {
+    a {
+        font-weight: bold;
+    }
+    .new {
+        color: #1fd32e;
+    }
+    .mid {
+        color: #eadc3c;
+    }
+    .old {
+        color: #ea3b3b;
+    }
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.red {
+    color: $red;
+}
+
+.green {
+    color: $green;
+}
+
+.fa-caret-up {
+    color: $green;
+}
+
+.fa-caret-down {
+    color: $red;
+}
+
+.fa-caret-right {
+    color: $yellow;
+}
+
+.alliance-ships {
+    .ships-list {
+        width: 350px;
+        min-width: 350px;
+        margin: 0 auto;
+        table {
+            width: 100%;
+            tr {
+                td {
+                    padding: 0;
+                }
+                td:nth-of-type(2) {
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+.positive {
+    color: #1fd32e;
+}
+.negative {
+    color: #ea3b3b;
+}
+
+.navbar {
+    background: $nav-bg;
+    padding-bottom: 0;
+    padding-top: 0;
+    .navbar-brand {
+        color: #fff !important;
+    }
+    .navbar-nav {
+        .nav-link {
+            color: #fff;
+
+            &.active {
+              color: #fff;
+              background: $minty;
+            }
+            &:hover {
+              color: #fff;
+              background: $darkminty;
+            }
+        }
+    }
+}
+
+.card {
+    color: #fff;
+    border: 0;
+    background-color: inherit;
+}
+.collapse-font {
+    font-size: 0;
+}
+.card-header {
+    padding: 0.5rem 0;
+    border-radius: 3px 3px 0 0;
+    background-color: $primary-bg;
+    font-weight: bold;
+    label {
+        margin-bottom: 0;
+    }
+    &:first-child {
+        border-radius: 3px 3px 0 0;
+    }
+}
+.btn-primary {
+    background-color: $button-bg;
+    border-color: $button-bg;
+    &:hover {
+        background-color: $button-bg-hover;
+        border-color: $button-bg-hover;
+    }
+}
+.card-header + .card-body {
+    border-radius: 0 0 3px 3px;
+}
+.card-body {
+    background-color: $secondary-bg;
+    border-radius: 3px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-striped {
+    tr {
+        background-color: #474747;
+    }
+    tfoot {
+        tr {
+            background: #424242;
+        }
+    }
+}
+
+.card .card-body {
+    &.filters {
+        padding: 1.25rem;
+    }
+}
+.filters {
+    margin-bottom: 10px;
+}
+
+table.hover-highlight tbody tr {
+  &:hover {
+      background-color: $darkpink !important;
+      transition: 0.4s;
+  }
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: $secondary-bg;
+}
+
+.table-bordered {
+    border: 0;
+}
+.table-bordered th, .table-bordered td {
+    border: 0;
+}
+
+a, .label-green {
+  color: $link-color;
+}
+
+.table {
+  color: #fff;
+  thead th {
+    border-color: $border-color;
+    border: 0;
+  }
+  td {
+      &.options {
+          text-align: right;
+      }
+      &.basher {
+          color: $basher !important;
+      }
+  }
+}
+
+input, select {
+    height: 30px;
+}
+
+.table-sort {
+    color: $link-color;
+    cursor: pointer;
+    &:hover {
+        color: $link-color-hover;
+    }
+    .fa-caret-down, .fa-caret-up {
+        color: $link-color;
+        margin-left: 5px;
+    }
+}
+
+a {
+    &.view-all{
+        color: #000;
+        padding: 2px 5px;
+        display: block;
+        background-color: #BB7ECD;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 11px;
+    }
+}
+
+p {
+    &.no-data {
+        margin-bottom: 0;
+    }
+}
+
+.sub-nav {
+    .nav-item {
+        display: inline-block;
+        margin-right: 10px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.preloader-wrapper {
+    padding: 20px;
+    .preloader {
+        margin: 0 auto;
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.pager {
+    padding: 6px;
+    font-size: 11px;
+}
+
+.clickable {
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+.faded {
+    opacity: 0.1;
+}
+
+pre {
+  background: #fff;
+  padding: 15px;
+}
+.mobile-nav {
+    color: #fff !important;
+    cursor: pointer;
+    &.selected {
+        background: #1C161D;
+        position: fixed;
+        z-index: 99;
+        right: 0;
+    }
+}
+.navbar {
+    padding: 0;
+    display: flex;
+    padding-left: 10px;
+    background: #1C161D;
+}
+.navbar.mobile {
+    border-bottom: 1px solid #1C161D;
+    padding-left: 0;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 9;
+    align-items: normal;
+    ul {
+        margin-top: 40px;
+    }
+    a {
+      font-size: 18px;
+      height: auto;
+    }
+}
+.navbar ul {
+    width: 100%;
+    text-align: center;
+}
+.navbar ul li a {
+    width: 100%;
+}
+.nav-header {
+    display: flex;
+    background: #202020;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 99;
+    a {
+        color: #fff;
+        display: inline-block;
+        padding: 10px;
+        margin-left: 0px;
+        font-size: 14px;
+        height: 40px;
+    }
+}
+a:hover {
+    text-decoration: none;
+}
+
+a.brand {
+    border-left: 0;
+    margin-left: 10px;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+}
+.sidebar {
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  background: #202020;
+  margin-top: 0px;
+  top: 0;
+  padding: 0;
+}
+
+a {
+    &.home {
+        height: 40px;
+        display: block;
+        width: 100%;
+        background: #FB9678;
+        color: #fff;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+        &.mobile {
+            font-size: 14px;
+            line-height: normal;
+        }
+    }
+}
+
+.sidebar {
+    
+    .navbar-nav {
+        text-align: right;
+        .nav-link {
+            color: #fff;
+            padding: 5px 20px;
+            &:hover {
+                color: #fff;
+                background: $minty;
+            }
+        }
+    }
+}
+.navbar-nav .nav-link.active {
+    background: $link-color;
+    &:hover {
+        background: $link-color-hover;
+    }
+}
+
+.toggle-wrapper {
+    margin-left: 10px;
+    .toggle-label {
+        margin-right: 4px;
+    }
+    .toggle-button {
+
+    }
+}
+
+.search-bar {
+    background: $link-color-dark;
+    color: #fff;
+    padding: 0.25em 10px;
+    line-height: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    height: 40px;
+    .attack {
+        margin-right: 5px;
+    }
+}
+
+.user-name {
+    .icon {
+        margin-right: 0px;
+    }
+    .label {
+        display: none;
+    }
+}
+
+input.search {
+    width: 80px;
+}
+
+.nav-header {
+    a {
+        &:hover {
+            background: $minty;
+        }
+        &.brand {
+            margin-left: 5px;
+            padding-left: 5px;
+        }
+        &.logout {
+            background: #cc0000;
+            &:hover {
+                background: #cc0000;
+            }
+        }
+        &.active {
+            color: #fff;
+            background: $minty;
+            &:hover {
+                background: $darkminty;
+            }
+        }
+    }
+}
+
+.double-button {
+    display: inline-block;
+    a {
+        color: #fff;
+        display: inline-block;
+        height: 30px;
+    }
+    a.first {
+        padding: 0 0.5rem 0 0.5rem;
+        border-radius: 5px 0 0 5px;
+        background: #ff9900;
+    }
+    a.second {
+        padding: 0 0.5rem 0 0.5rem;
+        background: #cc7a00;
+        border-radius: 0 5px 5px 0;
+    }
+}
+
+ul {
+    &.small-nav {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+        text-align: right;
+        li {
+            a {
+                color: #999;
+                padding: 5px 10px;
+            }
+        }
+    }
+}
+
+.sticky-col {
+    position: sticky;
+    left: 0;
+    position: 999;
+    background: #393939;
+}
+
+.defence {
+    .eta-group {
+        margin-bottom: 10px;
+        .eta {
+            background: $primary-bg;
+            padding: 5px;
+        }
+        .planet {
+            .planet-info {
+                padding: 5px;
+                position: relative;
+                .calc {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+            .planet-fleets {
+                padding: 0 0 0 5px;
+                display: table;
+                .fleet {
+                    padding: 0 0 0 5px;
+                    color: $red;
+                    display: table-row;
+                    .coords {
+                        display: table-cell;
+                        padding-right: 10px;
+                    }
+                    .fleet-name {
+                        display: table-cell;
+                        width: 100%;
+                    }
+                    .ship-count {
+                        display: table-cell;
+                    }
+                    .scans {
+                        width: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.help {
+    font-size: 11px;
+    font-style: italic;
+    color: #ccc;
+    padding: 5px 0 0;
+}
+
+@include media-breakpoint-up(sm) {
+    .user-name {
+        .icon {
+            margin-right: 5px;
+        }
+        .label {
+            display: inline-block;
+        }
+    }
+    input.search {
+        width: 120px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #app {
+        .nav-header {
+            position: fixed;
+
+        }
+        .app-content {
+            margin: calc(40px + 1.5rem) 0 calc(40px + 1.5rem) 0;
+        }
+        main {
+            padding: 0 1.5rem 0 calc(95px + 1.5rem);
+        }
+    }
+    .nav-header {
+        a {
+            &.brand {
+                margin-left: 10px;
+                padding-left: 10px;
+            }
+        }
+    }
+}
