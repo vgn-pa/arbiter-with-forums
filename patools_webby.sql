@@ -1636,3 +1636,12 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO settings (name, value) VALUES ('overview','');
+INSERT INTO settings (name, value) VALUES ('attack','');	
+INSERT INTO settings (name, value) VALUES ('alliance','');
+
+INSERT INTO roles (name) VALUES('Admin');
+INSERT INTO roles (name) VALUES('BC');
+INSERT INTO roles (name) VALUES('Member');
