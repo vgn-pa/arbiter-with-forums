@@ -64,7 +64,7 @@
         methods: {
             loadHistory: function() {
                 this.loading = true;
-                axios.get('/api/v1/galaxies/' + this.id + '/history', {
+                axios.get('api/v1/galaxies/' + this.id + '/history', {
                     params: {
                         page: this.page
                     }

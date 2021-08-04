@@ -90,7 +90,7 @@
         methods: {
             loadBattlegroups: function() {
                 this.loading = true;
-                axios.get('/api/v1/battlegroup', {
+                axios.get('api/v1/battlegroup', {
                     params: {
                         sort: this.sort
                     }
@@ -101,7 +101,7 @@
                 });
             },
             handleSubmit() {
-                axios.post('/api/v1/battlegroup', {
+                axios.post('api/v1/battlegroup', {
                     name: this.name
                 }).then((response) => {
                     this.loadBattlegroups();
@@ -116,7 +116,7 @@
             },
             remove: function(id) {
                 if(confirm("Are you sure?")) {
-                    axios.delete('/api/v1/battlegroup/'+id)
+                    axios.delete('api/v1/battlegroup/'+id)
                     .then((response) => {
                         this.battlegroups = response.data;
                         this.$notify({
@@ -130,7 +130,7 @@
 
             },
             join: function(id) {
-                axios.get('/api/v1/battlegroup/'+id+'/join')
+                axios.get('api/v1/battlegroup/'+id+'/join')
                 .then((response) => {
                     this.$notify({
                       group: 'foo',

@@ -122,7 +122,7 @@
         methods: {
             loadGalaxies: function() {
                 this.loading = true;
-                axios.get('/api/v1/galaxies', {
+                axios.get('api/v1/galaxies', {
                     params: {
                         sort: this.sort
                     }

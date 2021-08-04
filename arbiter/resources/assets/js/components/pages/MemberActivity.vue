@@ -56,14 +56,14 @@
         },
         methods: {
             loadUser: function() {
-                axios.get('/api/v1/members/' + this.$route.params.id)
+                axios.get('api/v1/members/' + this.$route.params.id)
                 .then((response) => {
                     this.member = response.data;
                 });
             },
             loadActivities: function() {
                 this.loading = true;
-                axios.get('/api/v1/activities', {
+                axios.get('api/v1/activities', {
                     params: {
                         page: this.page,
                         perPage: this.perPage,

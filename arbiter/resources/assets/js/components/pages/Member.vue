@@ -101,7 +101,7 @@
         },
         methods: {
             handleSubmit() {
-                axios.put('/api/v1/members/' + this.$route.params.id, this.member).then((response) => {
+                axios.put('api/v1/members/' + this.$route.params.id, this.member).then((response) => {
                   this.$notify({
                     group: 'foo',
                     title: 'Success',
@@ -112,7 +112,7 @@
             }
         },
         mounted() {
-            axios.get('/api/v1/members/' + this.$route.params.id)
+            axios.get('api/v1/members/' + this.$route.params.id)
             .then((response) => {
                 this.member = response.data;
                 this.loadingMember = false;

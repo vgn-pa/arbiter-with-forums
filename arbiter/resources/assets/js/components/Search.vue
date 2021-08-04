@@ -33,7 +33,7 @@
         methods: {
             lookup: _.debounce(function () {
                 if(this.search) {
-                    axios.get('/api/v1/search?search=' + this.search)
+                    axios.get('api/v1/search?search=' + this.search)
                     .then((response) => {
                         var data = response.data;
                         if(data.planet) {
@@ -52,7 +52,7 @@
                 }
             }, 1000),
             loadAttacks: function() {
-                axios.get('/api/v1/attacks')
+                axios.get('api/v1/attacks')
                 .then((response) => {
                     this.attacks = response.data;
                 });

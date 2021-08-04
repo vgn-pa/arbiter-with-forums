@@ -23,7 +23,7 @@
             };
         },
         mounted() {
-            axios.get('/api/v1/planets/' + this.$route.params.id + '?all=1')
+            axios.get('api/v1/planets/' + this.$route.params.id + '?all=1')
             .then((response) => {
                 this.planet = response.data;
             });

@@ -214,7 +214,7 @@
         methods: {
             effSubmit() {
                 if(this.effAmount && this.effShip) {
-                    axios.get('/api/v1/misc/eff?ship=' + this.effShip + '&amount=' + this.effAmount)
+                    axios.get('api/v1/misc/eff?ship=' + this.effShip + '&amount=' + this.effAmount)
                     .then((response) => {
                         this.effResult = response.data;
                     });
@@ -222,7 +222,7 @@
             },
             stopSubmit() {
                 if(this.stopAmount && this.stopShip) {
-                    axios.get('/api/v1/misc/stop?ship=' + this.stopShip + '&amount=' + this.stopAmount)
+                    axios.get('api/v1/misc/stop?ship=' + this.stopShip + '&amount=' + this.stopAmount)
                     .then((response) => {
                         this.stopResult = response.data;
                     });
@@ -230,7 +230,7 @@
             },
             costSubmit() {
                 if(this.costAmount && this.costShip) {
-                    axios.get('/api/v1/misc/cost', {
+                    axios.get('api/v1/misc/cost', {
                         params: {
                             ship: this.costShip,
                             amount: this.costAmount
@@ -244,7 +244,7 @@
             roidcostSubmit: _.debounce(function () {
                 if(this.roidcostRoids && this.roidcostCost) {
                     var roidcostBonus = (this.roidcostBonus) ? this.roidcostBonus : 0;
-                    axios.get('/api/v1/misc/roidcost?roids=' + this.roidcostRoids + '&cost=' + this.roidcostCost + '&bonus=' + roidcostBonus)
+                    axios.get('api/v1/misc/roidcost?roids=' + this.roidcostRoids + '&cost=' + this.roidcostCost + '&bonus=' + roidcostBonus)
                     .then((response) => {
                         this.roidcostResult = response.data;
                     });
@@ -253,7 +253,7 @@
             affordSubmit() {
                 this.affordResult = "";
                 if(this.affordX && this.affordY && this.affordZ && this.affordShip) {
-                    axios.get('/api/v1/misc/afford', {
+                    axios.get('api/v1/misc/afford', {
                         params: {
                             x: this.affordX,
                             y: this.affordY,
@@ -269,7 +269,7 @@
             lazySubmit: _.debounce(function () {
                 this.lazyResult = "";
                 if(this.lazyX && this.lazyY && this.lazyZ) {
-                    axios.get('/api/v1/misc/calc', {
+                    axios.get('api/v1/misc/calc', {
                         params: {
                             x: this.lazyX,
                             y: this.lazyY,
@@ -285,7 +285,7 @@
             }, 500),
         },
         mounted() {
-            axios.get('/api/v1/ships')
+            axios.get('api/v1/ships')
             .then((response) => {
                 this.ships = response.data;
             });

@@ -83,7 +83,7 @@
       },
       methods: {
           drop: function(booking) {
-              axios.get('/api/v1/attacks/bookings/drop/' + booking.id, {
+              axios.get('api/v1/attacks/bookings/drop/' + booking.id, {
                   params: {
                       attack_id: booking.attack_id
                   }

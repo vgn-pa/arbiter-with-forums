@@ -52,7 +52,7 @@
         methods: {
             loadData: function() {
                 this.loading = true;
-                axios.get('/api/v1/fleets', {
+                axios.get('api/v1/fleets', {
                     params: {
                         page: this.page,
                         type: this.type,

@@ -71,7 +71,7 @@
       }
 
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", toolsUrl + '/api/v1/collector/scans', true);
+      xhr.open("POST", toolsUrl + 'api/v1/collector/scans', true);
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send(JSON.stringify({
           ids: mtc
@@ -168,7 +168,7 @@
 
       if(fleets.length) {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", toolsUrl + '/api/v1/collector/fleets', true);
+        xhr.open("POST", toolsUrl + 'api/v1/collector/fleets', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(fleets));
       }

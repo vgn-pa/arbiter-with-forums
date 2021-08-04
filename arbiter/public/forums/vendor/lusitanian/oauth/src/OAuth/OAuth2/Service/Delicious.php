@@ -61,7 +61,7 @@ class Delicious extends AbstractService
      */
     public function getAccessTokenEndpoint()
     {
-        return new Uri('https://avosapi.delicious.com/api/v1/oauth/token');
+        return new Uri('https://avosapi.delicious.comapi/v1/oauth/token');
     }
 
     /**

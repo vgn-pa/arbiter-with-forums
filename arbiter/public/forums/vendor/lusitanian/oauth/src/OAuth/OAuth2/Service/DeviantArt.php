@@ -43,7 +43,7 @@ class DeviantArt extends AbstractService
         parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri);
 
         if (null === $baseApiUri) {
-            $this->baseApiUri = new Uri('https://www.deviantart.com/api/v1/oauth2/');
+            $this->baseApiUri = new Uri('https://www.deviantart.comapi/v1/oauth2/');
         }
     }
 

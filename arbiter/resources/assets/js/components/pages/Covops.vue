@@ -252,7 +252,7 @@
         },
         methods: {
             hit: function(id) {
-                axios.get('/api/v1/covops/'+id+'/hit')
+                axios.get('api/v1/covops/'+id+'/hit')
                 .then((response) => {
                     this.loadTargets();
                 });
@@ -262,7 +262,7 @@
             }, 750),
             loadTargets: function() {
                 this.loading = true;
-                axios.get('/api/v1/covops', {
+                axios.get('api/v1/covops', {
                     params: {
                         has_d: this.hasd,
                         population: this.population,
@@ -276,13 +276,13 @@
                 });
             },
             loadLatest: function() {
-              axios.get('/api/v1/covops/latest')
+              axios.get('api/v1/covops/latest')
               .then((response) => {
                   this.latest = response.data;
               });
             },
             handleSubmit() {
-                axios.post('/api/v1/covops', this.calc).then((response) => {
+                axios.post('api/v1/covops', this.calc).then((response) => {
                     this.calc.result = response.data;
                 });
             },

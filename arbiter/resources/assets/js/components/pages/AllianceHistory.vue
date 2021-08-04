@@ -61,14 +61,14 @@
         },
         methods: {
             loadAlliance: function() {
-                axios.get('/api/v1/alliances/' + this.$route.params.id)
+                axios.get('api/v1/alliances/' + this.$route.params.id)
                 .then((response) => {
                     this.alliance = response.data;
                     this.loadingAlliance = false;
                 });
             },
             loadHistory: function() {
-                axios.get('/api/v1/alliances/' + this.$route.params.id + '/history', {
+                axios.get('api/v1/alliances/' + this.$route.params.id + '/history', {
                     params: {
                         all: 1
                     }

@@ -404,14 +404,14 @@
         methods: {
             loadPlanet: function() {
                 this.loading = true;
-                axios.get('/api/v1/planets/' + this.$route.params.id)
+                axios.get('api/v1/planets/' + this.$route.params.id)
                 .then((response) => {
                     this.planet = response.data;
                     this.loading = false;
                 });
             },
             loadRanks: function() {
-                axios.get('/api/v1/planets/' + this.$route.params.id + '/ranks')
+                axios.get('api/v1/planets/' + this.$route.params.id + '/ranks')
                 .then((response) => {
                     this.ranks = response.data;
                 });

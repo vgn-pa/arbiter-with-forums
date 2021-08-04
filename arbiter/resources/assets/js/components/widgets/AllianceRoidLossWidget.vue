@@ -35,7 +35,7 @@
       },
       methods: {
           loadGalaxies: function() {
-              axios.get('/api/v1/alliances', {
+              axios.get('api/v1/alliances', {
                   params: {
                       sort: this.sort,
                       page: 1,

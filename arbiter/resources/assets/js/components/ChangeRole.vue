@@ -14,7 +14,7 @@
         props: ['member', 'roles', 'settings'],
         methods: {
             changeRole: function() {
-                axios.get('/api/v1/members/'+this.member.id+'/role/'+this.member.role_id)
+                axios.get('api/v1/members/'+this.member.id+'/role/'+this.member.role_id)
                 .then((response) => {
                     this.$notify({
                       group: 'foo',

@@ -39,7 +39,7 @@
       },
       methods: {
           loadPlanets: function() {
-              axios.get('/api/v1/planets', {
+              axios.get('api/v1/planets', {
                   params: {
                       sort: this.sort,
                       page: 1,

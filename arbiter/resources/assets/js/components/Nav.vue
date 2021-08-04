@@ -69,7 +69,7 @@
             },
             lookup: _.debounce(function () {
                 if(this.search) {
-                    axios.get('/api/v1/search?search=' + this.search)
+                    axios.get('api/v1/search?search=' + this.search)
                     .then((response) => {
                         var data = response.data;
                         if(data.planet) {

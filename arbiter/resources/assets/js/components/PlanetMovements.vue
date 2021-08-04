@@ -68,7 +68,7 @@
         methods: {
             loadHistory: function() {
                 this.loading = true;
-                axios.get('/api/v1/planets/movements', {
+                axios.get('api/v1/planets/movements', {
                     params: {
                         planet_id: this.planetId,
                         galaxy_id: this.galaxyId,

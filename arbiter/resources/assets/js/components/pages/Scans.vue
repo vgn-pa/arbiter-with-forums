@@ -149,7 +149,7 @@
         },
         methods: {
             submit() {
-                axios.post('/api/v1/parser', {
+                axios.post('api/v1/parser', {
                     url: this.url
                 }).then((response) => {
                   var message = "";
@@ -168,7 +168,7 @@
                 });
             },
             request() {
-                axios.post('/api/v1/scanrequest', {
+                axios.post('api/v1/scanrequest', {
                     x: this.x,
                     y: this.y,
                     z: this.z,
@@ -190,7 +190,7 @@
             },
             deleteMyRequest(id) {
                 if(confirm("Are you sure?")) {
-                    axios.delete('/api/v1/scanrequest/'+id)
+                    axios.delete('api/v1/scanrequest/'+id)
                     .then((response) => {
                         this.$notify({
                           group: 'foo',
@@ -204,12 +204,12 @@
                 }
             },
             loadRequests() {
-                axios.get('/api/v1/scanrequest').then((response) => {
+                axios.get('api/v1/scanrequest').then((response) => {
                     this.requests = response.data;
                 });
             },
             loadMyRequests() {
-                axios.get('/api/v1/scanrequest/my').then((response) => {
+                axios.get('api/v1/scanrequest/my').then((response) => {
                     this.myrequests = response.data;
                 });
             }

@@ -119,7 +119,7 @@
         methods: {
             loadGalaxy: function() {
                 this.loading = true;
-                axios.get('/api/v1/galaxies/' + this.$route.params.id)
+                axios.get('api/v1/galaxies/' + this.$route.params.id)
                 .then((response) => {
                     this.galaxy = response.data;
                     this.loading = false;

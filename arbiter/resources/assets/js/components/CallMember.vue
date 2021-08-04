@@ -6,7 +6,7 @@
     export default {
         methods: {
             call: function(id) {
-                axios.get('/api/v1/members/'+id+'/call')
+                axios.get('api/v1/members/'+id+'/call')
                 .then((response) => {
                     this.clicked = false;
                 });

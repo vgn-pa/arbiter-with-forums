@@ -30,7 +30,7 @@
         },
         methods: {
             loadQueue: function() {
-                axios.get('/api/v1/scanqueue').then((response) => {
+                axios.get('api/v1/scanqueue').then((response) => {
                   this.scans = response.data;
                 });
             }

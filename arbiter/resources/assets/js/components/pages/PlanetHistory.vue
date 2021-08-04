@@ -62,13 +62,13 @@
         },
         methods: {
             loadPlanet: function() {
-                axios.get('/api/v1/planets/' + this.$route.params.id)
+                axios.get('api/v1/planets/' + this.$route.params.id)
                 .then((response) => {
                     this.planet = response.data;
                 });
             },
             loadHistory: function() {
-                axios.get('/api/v1/planets/' + this.$route.params.id + '/history', {
+                axios.get('api/v1/planets/' + this.$route.params.id + '/history', {
                     params: {
                         limit: 9999
                     }

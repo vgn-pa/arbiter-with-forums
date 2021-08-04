@@ -53,7 +53,7 @@ class Reddit extends AbstractService
      */
     public function getAuthorizationEndpoint()
     {
-        return new Uri('https://ssl.reddit.com/api/v1/authorize');
+        return new Uri('https://ssl.reddit.comapi/v1/authorize');
     }
 
     /**
@@ -61,7 +61,7 @@ class Reddit extends AbstractService
      */
     public function getAccessTokenEndpoint()
     {
-        return new Uri('https://ssl.reddit.com/api/v1/access_token');
+        return new Uri('https://ssl.reddit.comapi/v1/access_token');
     }
 
     /**

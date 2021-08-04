@@ -64,13 +64,13 @@
         },
         methods: {
             loadGalaxy: function() {
-              axios.get('/api/v1/galaxies/' + this.$route.params.id)
+              axios.get('api/v1/galaxies/' + this.$route.params.id)
               .then((response) => {
                   this.galaxy = response.data;
               });
             },
             loadHistory: function() {
-                axios.get('/api/v1/galaxies/' + this.$route.params.id + '/history', {
+                axios.get('api/v1/galaxies/' + this.$route.params.id + '/history', {
                     params: {
                         limit: 9999
                     }

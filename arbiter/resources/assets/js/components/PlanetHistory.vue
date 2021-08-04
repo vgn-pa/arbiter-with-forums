@@ -62,7 +62,7 @@
         methods: {
             loadHistory: function() {
                 this.loading = true;
-                axios.get('/api/v1/planets/' + this.id + '/history', {
+                axios.get('api/v1/planets/' + this.id + '/history', {
                     params: {
                         page: this.page
                     }

@@ -283,7 +283,7 @@
         },
         methods: {
             book: function(key, targetId, id) {
-                axios.get('/api/v1/attacks/'+this.$route.params.id+'/book/'+id)
+                axios.get('api/v1/attacks/'+this.$route.params.id+'/book/'+id)
                 .then((response) => {
                     this.loadTargetBookings(key, targetId, id);
                     this.loadBookings();
@@ -299,13 +299,13 @@
             },
             loadTargetBookings: function(key, targetId, bookingId) {
                 //console.log(key, targetId, bookingId);
-                axios.get('/api/v1/attacks/'+this.attack.id+'/targets/'+targetId+'/bookings')
+                axios.get('api/v1/attacks/'+this.attack.id+'/targets/'+targetId+'/bookings')
                 .then((response) => {
                     this.attack.targets[key].bookings = response.data;
                 });
             },
             loadTargets: function() {
-                axios.get('/api/v1/attacks/' + this.$route.params.id, {
+                axios.get('api/v1/attacks/' + this.$route.params.id, {
                     params: {
                         sort: this.sort
                     }
@@ -319,7 +319,7 @@
                 });
             },
             loadBookings: function() {
-                axios.get('/api/v1/attacks/bookings', {
+                axios.get('api/v1/attacks/bookings', {
                     params: {
                         attack_id: this.$route.params.id
                     }
@@ -330,7 +330,7 @@
             },
             deleteTarget: function(id) {
                 if(confirm("Are you sure you want to remove this target?")) {
-                    axios.get('/api/v1/attacks/' + this.$route.params.id + '/delete/' + id)
+                    axios.get('api/v1/attacks/' + this.$route.params.id + '/delete/' + id)
                     .then((response) => {
                         this.loadTargets();
                         this.loadBookings();
@@ -348,7 +348,7 @@
                 attack.land_tick = this.newLt;
                 attack.notes = this.newNotes;
                 attack.newTargets = this.newTargets;
-                axios.put('/api/v1/attacks/' + this.$route.params.id, attack)
+                axios.put('api/v1/attacks/' + this.$route.params.id, attack)
                 .then((response) => {
                     this.loadTargets();
                     this.loadBookings();
@@ -363,7 +363,7 @@
             },
             addWave: function() {
                 if(confirm("Are you sure you want to add a new wave?")) {
-                    axios.get('/api/v1/attacks/' + this.$route.params.id + '/waves/add')
+                    axios.get('api/v1/attacks/' + this.$route.params.id + '/waves/add')
                     .then((response) => {
                         this.loadTargets();
                         this.loadBookings();
@@ -378,7 +378,7 @@
             },
             removeWave: function() {
                 if(confirm("Are you sure you want to remove the last wave?")) {
-                    axios.get('/api/v1/attacks/' + this.$route.params.id + '/waves/remove')
+                    axios.get('api/v1/attacks/' + this.$route.params.id + '/waves/remove')
                     .then((response) => {
                         this.loadTargets();
                         this.loadBookings();

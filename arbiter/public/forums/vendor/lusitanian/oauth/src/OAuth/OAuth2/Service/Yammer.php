@@ -22,7 +22,7 @@ class Yammer extends AbstractService
         parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri);
 
         if (null === $baseApiUri) {
-            $this->baseApiUri = new Uri('https://www.yammer.com/api/v1/');
+            $this->baseApiUri = new Uri('https://www.yammer.comapi/v1/');
         }
     }
 

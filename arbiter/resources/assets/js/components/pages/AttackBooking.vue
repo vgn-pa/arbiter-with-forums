@@ -169,7 +169,7 @@
         },
         methods: {
             saveDetails() {
-                axios.put('/api/v1/attacks/bookings/' + this.$route.params.booking_id, {
+                axios.put('api/v1/attacks/bookings/' + this.$route.params.booking_id, {
                     notes: this.notes,
                     battle_calc: this.calc
                 }).then((response) => {
@@ -183,7 +183,7 @@
                 });
             },
             loadBooking: function() {
-                axios.get('/api/v1/attacks/bookings/' + this.$route.params.booking_id)
+                axios.get('api/v1/attacks/bookings/' + this.$route.params.booking_id)
                 .then((response) => {
                     this.booking = response.data;
                     this.notes = this.booking.notes;
@@ -192,19 +192,19 @@
                 });
             },
             loadNonusers: function() {
-                axios.get('/api/v1/attacks/bookings/' + this.$route.params.booking_id + '/nonusers')
+                axios.get('api/v1/attacks/bookings/' + this.$route.params.booking_id + '/nonusers')
                 .then((response) => {
                     this.nonusers = response.data;
                 });
             },
             loadUsers: function() {
-                axios.get('/api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users')
+                axios.get('api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users')
                 .then((response) => {
                     this.users = response.data;
                 });
             },
             addUser: function() {
-                axios.post('/api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users/add', {
+                axios.post('api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users/add', {
                     user_id: this.user
                 })
                 .then((response) => {
@@ -219,7 +219,7 @@
                 });
             },
             removeUser: function(user) {
-                axios.post('/api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users/delete', {
+                axios.post('api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users/delete', {
                     user_id: user
                 })
                 .then((response) => {
@@ -235,7 +235,7 @@
             },
             makeOwner: function(user) {
                 if(confirm("Are you sure you want to set this user as the owner?")) {
-                    axios.post('/api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users/owner', {
+                    axios.post('api/v1/attacks/bookings/' + this.$route.params.booking_id + '/users/owner', {
                         user_id: user
                     })
                     .then((response) => {
@@ -252,7 +252,7 @@
                 }
             },
             loadFleets: function() {
-                axios.get('/api/v1/attacks/bookings/' + this.$route.params.booking_id + '/fleets')
+                axios.get('api/v1/attacks/bookings/' + this.$route.params.booking_id + '/fleets')
                 .then((response) => {
                     this.fleets = response.data;
                 });

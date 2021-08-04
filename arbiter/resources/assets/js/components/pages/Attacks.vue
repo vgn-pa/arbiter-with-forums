@@ -222,7 +222,7 @@
         methods: {
             close: function(id) {
                 if(confirm("Are you sure you want to close this attack?")) {
-                    axios.get('/api/v1/attacks/'+id+'/close')
+                    axios.get('api/v1/attacks/'+id+'/close')
                     .then((response) => {
                         this.attacks = response.data;
                         this.loadClosed();
@@ -230,7 +230,7 @@
                 }
             },
             handleSubmit() {
-                axios.post('/api/v1/attacks', {
+                axios.post('api/v1/attacks', {
                     targets: this.targets,
                     land_tick: this.land_tick,
                     notes: this.notes,
@@ -243,14 +243,14 @@
                     this.waves = "";
                     this.notes = "";
                     this.time = "";
-                    axios.get('/api/v1/attacks/scheduled')
+                    axios.get('api/v1/attacks/scheduled')
                     .then((response) => {
                         this.scheduled = response.data;
                     });
                 });
             },
             loadAttacks: function() {
-                axios.get('/api/v1/attacks')
+                axios.get('api/v1/attacks')
                 .then((response) => {
                     this.attacks = response.data;
                     this.attackLoading = false;
@@ -258,21 +258,21 @@
             },
             loadScheduled: function() {
                 if(this.settings.role == 'Admin' || this.settings.role == 'BC') {
-                    axios.get('/api/v1/attacks/scheduled')
+                    axios.get('api/v1/attacks/scheduled')
                     .then((response) => {
                         this.scheduled = response.data;
                     });
                 }
             },
             loadBookings: function() {
-                axios.get('/api/v1/attacks/bookings')
+                axios.get('api/v1/attacks/bookings')
                 .then((response) => {
                     this.bookings = response.data;
                 });
             },
             loadClosed: function() {
                 this.closedLoading = true;
-                axios.get('/api/v1/attacks/closed')
+                axios.get('api/v1/attacks/closed')
                 .then((response) => {
                     this.closed = response.data;
                     this.closedLoading = false;

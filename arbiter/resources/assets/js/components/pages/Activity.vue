@@ -57,7 +57,7 @@
         methods: {
             loadActivities: function() {
                 this.loading = true;
-                axios.get('/api/v1/activities', {
+                axios.get('api/v1/activities', {
                   params: {
                     days: this.days,
                     page: this.page,

@@ -59,7 +59,7 @@
         methods: {
             loadHistory: function() {
                 this.loading = true;
-                axios.get('/api/v1/alliances/' + this.id + '/history', {
+                axios.get('api/v1/alliances/' + this.id + '/history', {
                     params: {
                         page: this.page
                     }

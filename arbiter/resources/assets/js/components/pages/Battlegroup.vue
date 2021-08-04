@@ -138,31 +138,31 @@
         },
         methods: {
             loadBattlegroup: function() {
-                axios.get('/api/v1/battlegroup/' + this.$route.params.id)
+                axios.get('api/v1/battlegroup/' + this.$route.params.id)
                 .then((response) => {
                     this.battlegroup = response.data;
                 });
             },
             accept: function(id) {
-                axios.get('/api/v1/battlegroup/' + this.$route.params.id + '/user/' + id + '/accept')
+                axios.get('api/v1/battlegroup/' + this.$route.params.id + '/user/' + id + '/accept')
                 .then((response) => {
                     this.battlegroup = response.data;
                 });
             },
             decline: function(id) {
-                axios.get('/api/v1/battlegroup/' + this.$route.params.id + '/user/' + id + '/decline')
+                axios.get('api/v1/battlegroup/' + this.$route.params.id + '/user/' + id + '/decline')
                 .then((response) => {
                     this.battlegroup = response.data;
                 });
             },
             remove: function(id) {
-                axios.delete('/api/v1/battlegroup/' + this.$route.params.id + '/user/' + id)
+                axios.delete('api/v1/battlegroup/' + this.$route.params.id + '/user/' + id)
                 .then((response) => {
                     this.battlegroup = response.data;
                 });
             },
             addMember() {
-                axios.post('/api/v1/battlegroup/' + this.$route.params.id + '/user', {
+                axios.post('api/v1/battlegroup/' + this.$route.params.id + '/user', {
                     user: this.user
                 }).then((response) => {
                     this.battlegroup = response.data;

@@ -82,7 +82,7 @@
           addIntel: function(id) {
               event.target.disabled = true;
 
-              axios.post('/api/v1/intel/', { id: id })
+              axios.post('api/v1/intel/', { id: id })
               .then((response) => {
                   //location.reload();
                   this.$notify({

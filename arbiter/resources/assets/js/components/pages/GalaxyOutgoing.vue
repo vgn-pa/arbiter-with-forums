@@ -30,7 +30,7 @@
         methods: {
             loadData: function() {
                 this.loading = true;
-                axios.get('/api/v1/fleets', {
+                axios.get('api/v1/fleets', {
                     params: {
                         page: this.page,
                         type: this.type,
@@ -44,7 +44,7 @@
                 });
             },
             loadGalaxy: function() {
-                axios.get('/api/v1/galaxies/' + this.$route.params.id + '?all=1')
+                axios.get('api/v1/galaxies/' + this.$route.params.id + '?all=1')
                 .then((response) => {
                     this.galaxy = response.data;
                     this.loadData();

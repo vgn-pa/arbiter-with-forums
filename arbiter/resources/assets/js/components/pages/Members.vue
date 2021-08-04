@@ -144,11 +144,11 @@
         },
         methods: {
             call: function(id) {
-                axios.get('/api/v1/members/'+id+'/call')
+                axios.get('api/v1/members/'+id+'/call')
                 .then((response) => {});
             },
             disable: function(id) {
-                axios.get('/api/v1/members/'+id+'/disable')
+                axios.get('api/v1/members/'+id+'/disable')
                 .then((response) => {
                     this.members = response.data;
                     this.$notify({
@@ -160,7 +160,7 @@
                 });
             },
             enable: function(id) {
-                axios.get('/api/v1/members/'+id+'/enable')
+                axios.get('api/v1/members/'+id+'/enable')
                 .then((response) => {
                     this.members = response.data;
                     this.$notify({
@@ -173,7 +173,7 @@
             },
             remove: function(id) {
                 if(confirm("Are you sure?")) {
-                    axios.get('/api/v1/members/'+id+'/delete')
+                    axios.get('api/v1/members/'+id+'/delete')
                     .then((response) => {
                         this.members = response.data;
                         this.$notify({
@@ -187,7 +187,7 @@
 
             },
             admin: function(id) {
-                axios.get('/api/v1/members/'+id+'/admin')
+                axios.get('api/v1/members/'+id+'/admin')
                 .then((response) => {
                     this.members = response.data;
                     this.$notify({
@@ -199,14 +199,14 @@
                 });
             },
             loadMembers: function() {
-                axios.get('/api/v1/members')
+                axios.get('api/v1/members')
                 .then((response) => {
                     this.members = response.data;
                     this.loadingMembers = false;
                 });
             },
             loadRoles: function() {
-                axios.get('/api/v1/roles')
+                axios.get('api/v1/roles')
                 .then((response) => {
                     this.roles = response.data;
                 });

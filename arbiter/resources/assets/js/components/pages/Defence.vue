@@ -72,7 +72,7 @@
             // }
         },
         mounted() {
-            axios.get('/api/v1/defence')
+            axios.get('api/v1/defence')
             .then((response) => {
                 this.defence = response.data;
                 this.loading = false;

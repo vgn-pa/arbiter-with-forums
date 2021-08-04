@@ -163,7 +163,7 @@
         methods: {
             loadAlliances: function() {
                 this.loading = true;
-                axios.get('/api/v1/alliances', {
+                axios.get('api/v1/alliances', {
                     params: {
                         sort: this.sort
                     }
@@ -174,13 +174,13 @@
                 });
             },
             loadIntel: function() {
-                axios.get('/api/v1/intel')
+                axios.get('api/v1/intel')
                 .then((response) => {
                     this.intel = response.data;
                 });
             },
             seenIntel: function(id) {
-                axios.get('/api/v1/intel/' + id + '/seen')
+                axios.get('api/v1/intel/' + id + '/seen')
                 .then((response) => {
                     this.intel = response.data;
                     this.$notify({

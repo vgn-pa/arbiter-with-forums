@@ -94,7 +94,7 @@
         methods: {
             loadPlanets: function() {
                 this.loading = true;
-                axios.get('/api/v1/planets', {
+                axios.get('api/v1/planets', {
                     params: {
                         sort: this.sort,
                         page: this.page,

@@ -25,7 +25,7 @@
             };
         },
         mounted() {
-            axios.get('/api/v1/stats')
+            axios.get('api/v1/stats')
             .then((response) => {
                 this.stats = response.data;
             });

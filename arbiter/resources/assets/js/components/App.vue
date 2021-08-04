@@ -38,7 +38,7 @@
       },
       methods: {
           loadSettings: function() {
-              axios.get('/api/v1/settings').then((response) => {
+              axios.get('api/v1/settings').then((response) => {
                   this.settings = response.data;
               });
           }

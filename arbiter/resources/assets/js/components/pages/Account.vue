@@ -129,7 +129,7 @@
         },
         methods: {
             handleSubmit() {
-                axios.post('/api/v1/account', {
+                axios.post('api/v1/account', {
                     x: this.x,
                     y: this.y,
                     z: this.z,
@@ -153,7 +153,7 @@
             }
         },
         mounted() {
-            axios.get('/api/v1/account')
+            axios.get('api/v1/account')
             .then((response) => {
                 this.account            = response.data;
                 this.name               = this.account.name;

@@ -99,7 +99,7 @@
         },
         methods: {
             submitIntel() {
-                axios.post('/api/v1/parser/intel', {
+                axios.post('api/v1/parser/intel', {
                     xml: this.xml
                 }).then((response) => {
                     this.xml = "";
@@ -113,7 +113,7 @@
             },
             submitSettings() {
                 this.loadingSettings = true;
-                axios.post('/api/v1/admin', {
+                axios.post('api/v1/admin', {
                     attack: this.settings.attack,
                     overview: this.settings.overview,
                     alliance: this.settings.alliance
@@ -130,7 +130,7 @@
             },
             reset: function() {
                 if(confirm("Are you sure you want to reset tools?")) {
-                    axios.get('/api/v1/admin/reset')
+                    axios.get('api/v1/admin/reset')
                     .then((response) => {
                         this.$notify({
                           group: 'foo',
@@ -143,7 +143,7 @@
 
             },
             loadAlliances: function() {
-                axios.get('/api/v1/alliances', {
+                axios.get('api/v1/alliances', {
                     params: {
                         sort: "+name",
                         perPage: 999
@@ -155,7 +155,7 @@
                 });
             },
             loadSettings: function() {
-                axios.get('/api/v1/admin')
+                axios.get('api/v1/admin')
                 .then((response) => {
                     this.settings = response.data;
                     this.loadingSettings = false;

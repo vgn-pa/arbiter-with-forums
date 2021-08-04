@@ -39,7 +39,7 @@
         methods: {
             loadShips: function() {
                 this.loading = true;
-                axios.get('/api/v1/planets/' + this.id + '/ships')
+                axios.get('api/v1/planets/' + this.id + '/ships')
                 .then((response) => {
                     this.ships = response.data;
                     this.loading = false;

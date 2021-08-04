@@ -442,7 +442,7 @@
         },
         methods: {
             loadAlliance: function() {
-                axios.get('/api/v1/alliances/' + this.id)
+                axios.get('api/v1/alliances/' + this.id)
                 .then((response) => {
                     this.members = response.data.planets;
                     this.alliance = response.data;
@@ -462,7 +462,7 @@
             },
             loadGalaxies: function() {
                 this.galLoading = true;
-                axios.get('/api/v1/galaxies', {
+                axios.get('api/v1/galaxies', {
                     params: {
                         sort: '-member_count',
                         alliance_id: this.id
@@ -475,14 +475,14 @@
             },
             loadDevelopment: function() {
                 this.devLoading = true;
-                axios.get('/api/v1/alliances/' + this.id + '/development')
+                axios.get('api/v1/alliances/' + this.id + '/development')
                 .then((response) => {
                     this.devLoading = false;
                     this.development = response.data;
                 });
             },
             submitAlliance: _.debounce(function () {
-                axios.put('/api/v1/alliances/' + this.id, {
+                axios.put('api/v1/alliances/' + this.id, {
                     relation: this.alliance.relation,
                     nickname: this.alliance.nickname
                 }).then((response) => {
